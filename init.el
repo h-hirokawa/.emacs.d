@@ -18,6 +18,9 @@ FRAME is an Emacs frame"
 
 (add-hook 'find-file-hook 'flycheck-mode)
 
+(autoload 'js2-mode "js2" nil t)
+(add-to-list 'auto-mode-alist '("\\.js$" . js2-mode))
+
 (defun coffee-custom ()
   "Coffee-mode-hook."
   (setq tab-width 2)
