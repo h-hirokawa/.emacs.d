@@ -10,6 +10,7 @@
 (depends-on "flycheck")
 (depends-on "flycheck-cask")
 (depends-on "flymake")
+(depends-on "helm")
 (depends-on "jade-mode")
 (depends-on "jedi")
 (depends-on "js2-mode")

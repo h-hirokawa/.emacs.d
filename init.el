@@ -7,6 +7,9 @@
 (cask-initialize)
 (require 'pallet)
 
+(helm-mode 1)
+(global-set-key (kbd "C-x C-b") 'helm-mini)
+
 (load "term/bobcat")
 (defun my-keyboard-translations (&optional frame)
   "Not to forget bobcat whenever the new frame is created.
@@ -18,7 +21,12 @@ FRAME is an Emacs frame"
 
 (add-hook 'find-file-hook 'flycheck-mode)
 
-(autoload 'js2-mode "js2" nil t)
+
+(add-hook 'js2-mode-hook
+          #'(lambda ()
+              (setq js2-basic-offset 2
+                    indent-tabs-mode nil)
+              ))
 (add-to-list 'auto-mode-alist '("\\.js$" . js2-mode))
 
 (defun coffee-custom ()
@@ -32,8 +40,8 @@ FRAME is an Emacs frame"
 
 (add-hook 'python-mode-hook 'auto-complete-mode)
 (add-hook 'python-mode-hook 'jedi:setup)
-(defvar jedi:setup-keys t)
-(defvar jedi:complete-on-dot t)
+(setq jedi:setup-keys t)
+(setq jedi:complete-on-dot t)
 
 (setq backup-directory-alist `(("." . "~/.emacs.d/.saves")))
 (setq-default indent-tabs-mode nil)
