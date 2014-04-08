@@ -17,6 +17,7 @@
 (depends-on "magit")
 (depends-on "multiple-cursors")
 (depends-on "pallet")
+(depends-on "php-mode")
 (depends-on "popwin")
 (depends-on "projectile")
 (depends-on "python-mode")
