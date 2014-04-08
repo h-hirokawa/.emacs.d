@@ -10,17 +10,9 @@
 (helm-mode 1)
 (global-set-key (kbd "C-x C-b") 'helm-mini)
 
-(load "term/bobcat")
-(defun my-keyboard-translations (&optional frame)
-  "Not to forget bobcat whenever the new frame is created.
-FRAME is an Emacs frame"
-  (when (fboundp 'terminal-init-bobcat)
-    (terminal-init-bobcat)))
-(my-keyboard-translations)
-(add-hook 'after-make-frame-functions 'my-keyboard-translations)
+(define-key key-translation-map (kbd "\C-h") (kbd "\C-?"))
 
 (add-hook 'find-file-hook 'flycheck-mode)
-
 
 (add-hook 'js2-mode-hook
           #'(lambda ()
@@ -45,6 +37,9 @@ FRAME is an Emacs frame"
 
 (setq backup-directory-alist `(("." . "~/.emacs.d/.saves")))
 (setq-default indent-tabs-mode nil)
+
+(require 'uniquify)
+(setq uniquify-buffer-name-style 'post-forward-angle-brackets)
 
 (provide 'init)
 ;;; init.el ends here
