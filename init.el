@@ -21,11 +21,7 @@
               ))
 (add-to-list 'auto-mode-alist '("\\.js$" . js2-mode))
 
-(defun coffee-custom ()
-  "Coffee-mode-hook."
-  (setq tab-width 2)
-)
-(add-hook 'coffee-mode-hook '(lambda () (coffee-custom)))
+(custom-set-variables '(coffee-tab-width 2))
 
 (add-to-list 'auto-mode-alist '("\\.php$" . php-mode))
 (add-to-list 'auto-mode-alist '("\\.ctp$" . php-mode))
