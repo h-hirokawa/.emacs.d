@@ -8,9 +8,6 @@
 (require 'pallet)
 
 (helm-mode 1)
-(global-set-key (kbd "C-x C-b") 'helm-mini)
-
-(define-key key-translation-map (kbd "\C-h") (kbd "\C-?"))
 
 (add-hook 'find-file-hook 'flycheck-mode)
 
@@ -40,6 +37,10 @@
 
 (require 'uniquify)
 (setq uniquify-buffer-name-style 'post-forward-angle-brackets)
+
+(define-key key-translation-map (kbd "\C-h") (kbd "\C-?"))
+(global-set-key (kbd "C-x C-b") 'helm-mini)
+(global-set-key (kbd "C-x C-g") 'magit-status)
 
 (provide 'init)
 ;;; init.el ends here
