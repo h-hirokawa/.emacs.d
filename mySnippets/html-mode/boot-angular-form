@@ -1,0 +1,12 @@
+# -*- mode: snippet; require-final-newline: nil -*-
+# name: boot-angular-form
+# key: baform
+# binding: direct-keybinding
+# --
+<div class="form-group" ng-class="{'has-error': errors.$1}">
+  <label class="control-label" for="$2">$3</label>
+  <input type="text" class="form-control" id="$2" placeholder="Enter $3" ng-model="target.$1">
+  <p class="help-block" ng-show="errors.$1">
+    <span ng-repeat="e in errors.$1">{{ e }}</span><br>
+  </p>
+</div>

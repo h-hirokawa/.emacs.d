@@ -3,3 +3,5 @@
 !.gitignore
 !/Cask
 !/init.el
+!/mySnippets
+/mySnippets/**/.*.el

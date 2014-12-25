@@ -18,6 +18,8 @@
               ))
 (add-to-list 'auto-mode-alist '("\\.js$" . js2-mode))
 
+(add-hook 'sgml-mode-hook 'emmet-mode)
+
 (custom-set-variables '(coffee-tab-width 2))
 
 (add-to-list 'auto-mode-alist '("\\.php$" . php-mode))
@@ -37,6 +39,17 @@
 (define-key key-translation-map (kbd "\C-h") (kbd "\C-?"))
 (global-set-key (kbd "C-x C-b") 'helm-mini)
 (global-set-key (kbd "C-x C-g") 'magit-status)
+
+;; yasnippet
+(require 'yasnippet)
+(setq yas-snippet-dirs
+      '("~/.emacs.d/mySnippets"
+        "~/.emacs.d/snippets"
+        ))
+(yas-global-mode 1)
+
+
+(setq-default flycheck-flake8-maximum-line-length 120)
 
 (provide 'init)
 ;;; init.el ends here
